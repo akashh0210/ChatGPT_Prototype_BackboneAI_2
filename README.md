@@ -45,8 +45,8 @@ The key architectural choice: the evaluator is a **different model instance** fr
 ## Quick start
 
 ```bash
-git clone https://github.com/your-username/backbone-prototype.git
-cd backbone-prototype
+git clone https://github.com/akashh0210/ChatGPT_Prototype_BackboneAI_2.git
+cd ChatGPT_Prototype_BackboneAI_2
 npm install
 cp .env.example .env.local
 # Add your Groq API key to .env.local (see Environment variables below)
