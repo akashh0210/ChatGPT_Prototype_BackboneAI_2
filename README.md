@@ -2,7 +2,7 @@
 
 > A calibration layer woven into the ChatGPT interface — reasoning trace, inline confidence markers, surfaced assumptions, and a self-critique from a separate evaluator model, all visible inside every response.
 
-**[Live Demo →](https://your-deployment-url.vercel.app)** *(update after Vercel deploy)*
+**[Live Demo →](https://chat-gpt-prototype-backbone-ai-2.vercel.app)**
 
 ---
 
