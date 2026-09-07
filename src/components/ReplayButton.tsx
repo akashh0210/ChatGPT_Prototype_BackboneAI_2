@@ -9,9 +9,9 @@ export default function ReplayButton({ onReplay }: Props) {
     <button
       onClick={onReplay}
       aria-label="Replay response"
-      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] text-[#8A8A8A] border border-[#353641]
-                 hover:text-[#ECECF1] hover:border-[#10A37F60] hover:bg-[#2A2B32]
-                 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#10A37F80]
+      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] text-[#8F8F8F] border border-white/10
+                 hover:text-[#ECECEC] hover:border-white/25 hover:bg-[#2F2F2F]
+                 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30
                  group"
     >
       <RotateCcw

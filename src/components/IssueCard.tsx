@@ -20,7 +20,7 @@ export default function IssueCard({ issue }: Props) {
   const s = typeStyles[issue.type]
   return (
     <div
-      className="rounded-xl bg-[#25262C] border border-[#353641] overflow-hidden"
+      className="rounded-xl bg-[#252525] border border-white/10 overflow-hidden"
       style={{ borderLeft: `3px solid ${s.border}` }}
     >
       <div className="px-4 py-4">
@@ -30,10 +30,10 @@ export default function IssueCard({ issue }: Props) {
         >
           {typeLabel[issue.type]}
         </p>
-        <p className="text-[15px] font-semibold text-[#ECECF1] mb-2 leading-snug">{issue.title}</p>
-        <p className="text-[14px] text-[#B4B4B4] leading-relaxed mb-4">{issue.explanation}</p>
+        <p className="text-[15px] font-semibold text-[#ECECEC] mb-2 leading-snug">{issue.title}</p>
+        <p className="text-[14px] text-[#AFAFAF] leading-relaxed mb-4">{issue.explanation}</p>
         <button
-          className="text-[13px] px-4 py-2 rounded-lg border transition-colors duration-200 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#25262C]"
+          className="text-[13px] px-4 py-2 rounded-lg border transition-colors duration-200 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#252525]"
           style={{ borderColor: s.btnBorder, color: s.btnText }}
           aria-label={issue.action_label}
           onClick={() => {}}

@@ -12,7 +12,7 @@ export default function MainAnswer({ text, markers, isStreaming = false }: Props
   const segments = matchClaims(text, markers)
 
   return (
-    <div className="text-[15px] text-[#ECECF1] leading-[1.75] mb-5">
+    <div className="text-[16px] text-[#ECECEC] leading-[1.75] mb-5">
       {segments.map((seg, i) =>
         seg.marker ? (
           <span key={i}>
@@ -24,7 +24,7 @@ export default function MainAnswer({ text, markers, isStreaming = false }: Props
       )}
       {isStreaming && (
         <span
-          className="inline-block w-[2px] h-[1em] bg-[#ECECF1] align-middle ml-px"
+          className="inline-block w-[2px] h-[1em] bg-[#ECECEC] align-middle ml-px"
           style={{ animation: 'cursorBlink 800ms step-end infinite' }}
           aria-hidden="true"
         />

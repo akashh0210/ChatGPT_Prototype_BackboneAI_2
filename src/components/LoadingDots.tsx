@@ -4,7 +4,7 @@ export default function LoadingDots() {
       {[0, 1, 2].map((i) => (
         <span
           key={i}
-          className="w-2 h-2 rounded-full bg-[#8A8A8A]"
+          className="w-2 h-2 rounded-full bg-[#8F8F8F]"
           style={{
             animation: 'dotPulse 1.4s ease-in-out infinite',
             animationDelay: `${i * 200}ms`,

@@ -4,26 +4,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        'bg-primary': '#212121',
-        'bg-secondary': '#171717',
-        'bg-tertiary': '#2F2F3A',
-        'card-top': '#2A2B32',
-        'card-bottom': '#25262C',
-        'card-border': '#353641',
-        'border-subtle': '#2D2D3A',
-        'text-primary': '#ECECF1',
-        'text-secondary': '#B4B4B4',
-        'text-muted': '#8A8A8A',
+        /* ─── ChatGPT chrome: pure neutral grays, no blue tint ─── */
+        'bg-primary': '#212121',   // main pane
+        'bg-secondary': '#181818', // sidebar
+        'bg-composer': '#303030',  // composer pill + user bubble
+        'bg-hover': '#2F2F2F',     // row hover
+        'bg-raised': '#2A2A2A',    // cards on top of main pane
+        'bg-sunken': '#232323',    // nested card
+        'border-subtle': 'rgba(255,255,255,0.08)',
+        'border-strong': 'rgba(255,255,255,0.16)',
+        'text-primary': '#ECECEC',
+        'text-secondary': '#AFAFAF',
+        'text-muted': '#8F8F8F',
+        'accent-blue': '#3A7DE8',      // voice button fill
+        'accent-blue-text': '#5DA2FF', // Upgrade label
+
+        /* ─── Backbone signal colors: the only saturation on screen ─── */
         'green-accent': '#10A37F',
         'red-orange': '#D97757',
         'amber-accent': '#E5A155',
         'blue-accent': '#5B8DBE',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Helvetica', 'sans-serif'],
       },
       fontSize: {
-        body: ['15px', { lineHeight: '1.65' }],
+        body: ['16px', { lineHeight: '1.7' }],
+      },
+      borderRadius: {
+        composer: '28px',
       },
     },
   },

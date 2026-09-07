@@ -66,52 +66,66 @@ export default function ChatArea() {
 
   const userText = activePreset?.prompt ?? activeFreeText ?? ''
 
+  /* ─── Empty state: greeting + centered composer + suggestion chips ─── */
+  if (!hasActiveConversation) {
+    return (
+      <div className="flex flex-col flex-1 overflow-y-auto scroll-thin">
+        <div className="flex-1 flex flex-col items-center justify-center px-4 pb-20 min-h-0">
+          <h1 className="text-[28px] leading-tight font-medium text-text-primary text-center">
+            How can I help?
+          </h1>
+
+          <div className="w-full max-w-[768px] mt-7">
+            <InputBar
+              onSubmit={handleFreeForm}
+              disabled={inputDisabled}
+              cooldownSeconds={cooldown}
+              showCaption={false}
+            />
+
+            {/* No preset can be active in the empty state — selecting one
+                immediately switches to the conversation view. */}
+            <PresetPrompts onSelect={handleSelect} disabled={inputDisabled} />
+          </div>
+
+          <p className="text-[12px] text-text-muted text-center max-w-[600px] mt-8 leading-relaxed">
+            Backbone applies its calibration framework to any input, but response quality and depth
+            vary by prompt complexity — reflecting the underlying open-source LLM (Groq) rather than
+            Backbone's design.
+          </p>
+        </div>
+      </div>
+    )
+  }
+
+  /* ─── Conversation: scrolling transcript + bottom-docked composer ─── */
   return (
     <div className="flex flex-col flex-1 overflow-hidden">
-      <div className="flex-1 overflow-y-auto">
-        <div className="max-w-[768px] mx-auto px-4 pt-8 pb-4">
-          {!hasActiveConversation ? (
-            <div className="flex flex-col items-center justify-center min-h-[200px] gap-3">
-              <p className="text-[#8A8A8A] text-[15px] text-center">
-                Click a prompt below to see Backbone in action
-              </p>
-              <p className="text-[12px] text-[#8A8A8A] italic text-center max-w-[600px]">
-                You can also type your own prompt in the input bar below. Backbone applies its
-                calibration framework to any input, but response quality and depth vary by prompt
-                complexity — reflecting the underlying open-source LLM (Groq) rather than
-                Backbone's design.
-              </p>
-            </div>
-          ) : (
-            <>
-              <UserMessage text={userText} />
+      <div className="flex-1 overflow-y-auto scroll-thin">
+        <div className="max-w-[768px] mx-auto px-4 pt-4 pb-4">
+          <UserMessage text={userText} />
 
-              {isLoading && <LoadingDots />}
+          {isLoading && <LoadingDots />}
 
-              {(hasResponse || state.error) && (
-                <BackboneResponse
-                  state={state}
-                  onReplay={handleReplay}
-                />
-              )}
-            </>
+          {(hasResponse || state.error) && (
+            <BackboneResponse
+              state={state}
+              onReplay={handleReplay}
+            />
           )}
+
           <div ref={bottomRef} />
         </div>
       </div>
 
-      <div className="flex-shrink-0 border-t border-[#2D2D3A] bg-[#212121] pt-3">
-        <PresetPrompts
-          onSelect={handleSelect}
-          disabled={inputDisabled}
-          activeId={activePreset?.id}
-          isLoading={isBusy}
-        />
-        <InputBar
-          onSubmit={handleFreeForm}
-          disabled={inputDisabled}
-          cooldownSeconds={cooldown}
-        />
+      <div className="flex-shrink-0 bg-bg-primary px-4 pb-4">
+        <div className="max-w-[768px] mx-auto">
+          <InputBar
+            onSubmit={handleFreeForm}
+            disabled={inputDisabled}
+            cooldownSeconds={cooldown}
+          />
+        </div>
       </div>
     </div>
   )

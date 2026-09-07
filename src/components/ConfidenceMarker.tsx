@@ -32,7 +32,7 @@ export default function ConfidenceMarker({ marker, index = 0 }: Props) {
         className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2
                    opacity-0 group-hover:opacity-100 group-focus-within:opacity-100
                    transition-opacity duration-150
-                   px-3 py-2 text-xs text-[#ECECF1] bg-[#2A2B32] border border-[#353641]
+                   px-3 py-2 text-xs text-[#ECECEC] bg-[#2F2F2F] border border-white/10
                    rounded-lg whitespace-nowrap z-20 shadow-lg max-w-[240px] text-center"
         style={{ whiteSpace: 'normal', width: 'max-content', maxWidth: '220px' }}
         role="tooltip"
@@ -40,7 +40,7 @@ export default function ConfidenceMarker({ marker, index = 0 }: Props) {
         {marker.reason}
         <span
           className="absolute top-full left-1/2 -translate-x-1/2 -mt-px border-4 border-transparent"
-          style={{ borderTopColor: '#353641' }}
+          style={{ borderTopColor: 'rgba(255,255,255,0.14)' }}
         />
       </span>
     </span>

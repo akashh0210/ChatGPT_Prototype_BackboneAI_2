@@ -21,7 +21,7 @@ export default function BackboneResponse({ state, onReplay }: Props) {
         </div>
         <button
           onClick={onReplay}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] border border-[#353641] text-[#B4B4B4] hover:text-[#ECECF1] hover:border-[#10A37F60] hover:bg-[#2A2B32] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#10A37F80]"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] border border-white/10 text-[#AFAFAF] hover:text-[#ECECEC] hover:border-white/25 hover:bg-[#2F2F2F] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
         >
           <RefreshCw size={13} />
           Retry

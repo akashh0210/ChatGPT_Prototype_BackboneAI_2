@@ -1,26 +1,21 @@
-import { ChevronDown, Share2, MoreHorizontal } from 'lucide-react'
+import { Sparkles, CircleDashed } from 'lucide-react'
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between h-12 px-4 border-b border-[#2D2D3A] bg-[#212121] flex-shrink-0">
-      <button className="flex items-center gap-1.5 text-[#ECECF1] font-medium text-base hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#10A37F80] rounded">
-        ChatGPT
-        <ChevronDown size={16} className="text-[#8A8A8A]" />
-      </button>
-
+    <header className="flex items-center justify-end h-[52px] px-4 bg-bg-primary flex-shrink-0">
       <div className="flex items-center gap-1">
         <button
-          aria-label="Share conversation"
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-[#B4B4B4] hover:bg-[#2A2B32] hover:text-[#ECECF1] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#10A37F80]"
+          aria-label="Upgrade plan"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[15px] font-medium text-accent-blue-text hover:bg-bg-hover transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
         >
-          <Share2 size={15} />
-          <span>Share</span>
+          <Sparkles size={16} />
+          <span>Upgrade</span>
         </button>
         <button
-          aria-label="More options"
-          className="p-1.5 rounded-lg text-[#B4B4B4] hover:bg-[#2A2B32] hover:text-[#ECECF1] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#10A37F80]"
+          aria-label="Account"
+          className="p-1.5 rounded-lg text-text-secondary hover:bg-bg-hover hover:text-text-primary transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
         >
-          <MoreHorizontal size={18} />
+          <CircleDashed size={22} />
         </button>
       </div>
     </header>
