@@ -25,9 +25,23 @@ The key architectural choice: the evaluator is a **different model instance** fr
 
 ## Screenshots
 
-| Empty state | Full Backbone response | Expanded self-critique |
-|---|---|---|
-| *(add screenshot)* | *(add screenshot)* | *(add screenshot)* |
+### Empty state
+
+The ChatGPT surface, unmodified. Backbone adds nothing until there is a response to calibrate — the entry point is deliberately familiar.
+
+![Backbone empty state — centered greeting, composer, and four suggestion chips inside a ChatGPT-style sidebar and shell](docs/screenshots/empty-state.png)
+
+### Full Backbone response
+
+Three of the four signals visible at once: the **reasoning trace** at the top, and inline **confidence markers** (`HIGH`, `MEDIUM`) anchored to the specific clauses they qualify — not to the response as a whole.
+
+![A RAG vs fine-tuning answer showing an expanded three-step reasoning trace above the answer, with HIGH and MEDIUM confidence pills inline in the prose](docs/screenshots/backbone-response.png)
+
+### Expanded self-critique
+
+The fourth signal, expanded. Each issue is typed (`MISSING CONTEXT`, `EVIDENCE OVERREACH`), color-coded, and carries its own follow-up action. These come from a **separate evaluator model**, which is why the critique contradicts the answer above it rather than hedging it — note it challenging the same "right first choice" framing the generator produced.
+
+![Three flagged issues as color-coded cards — two Missing Context and one Evidence Overreach — each with an explanation and a follow-up action button](docs/screenshots/self-critique-expanded.png)
 
 ---
 
